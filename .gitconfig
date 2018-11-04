@@ -1,0 +1,9 @@
+[user]
+	email = fachmanntj@gmail.com
+	name = timo
+[push]
+	default = simple
+[alias]
+    st = status
+    ci = commit -v
+    br = branch
