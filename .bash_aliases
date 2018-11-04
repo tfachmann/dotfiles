@@ -1,0 +1,9 @@
+alias l='ls -al'
+alias ll='ls -l'
+alias ..='cd ..'
+alias sudo='sudo ' 
+alias vimrc="nvim ~/.config/nvim/init.vim"
+alias bashrc="nvim ~/.bashrc"
+alias notes="nvim ~/Documents/notes/default.org"
+alias teamspeak="~/custom_programs/teamspeak/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh"
+alias androidstudio="/usr/local/android-studio/bin/studio.sh"
