@@ -12,7 +12,7 @@ ln -s ~/git-repos/dotfiles/.bash_aliases ~/.bash_aliases
 
 ### neovim
 ```
-mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim
+mv ~/.config/nvim/init.vim ~/.config/nvim/init.vim_old
 ln -s ~/git-repos/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 
 mv ~/.config/nvim/.ycm_extra_conf.py ~/.config/nvim/.ycm_extra_conf.py_old
