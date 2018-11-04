@@ -32,3 +32,12 @@ ln -s ~/git-repos/dotfiles/nvim/spell ~/.config/nvim/spell
 mv ~/.gitconfig ~/.gitconfig_old
 ln -s ~/git-repos/dotfiles/.gitconfig ~/.gitconfig
 ```
+
+### i3
+```
+mv ~/.config/i3/config ~/./config/i3/config_old
+ln -s ~/git-repos/dotfiles/i3/.i3config ~/.config/i3/config
+
+sudo mv /etc/i3status.conf /etc/i3status.conf_old
+sudo ln -s ~/git-repos/dotfiles/i3/i3status.conf /etc/i3status.conf
+```
