@@ -75,3 +75,10 @@ sudo mv /etc/i3status.conf /etc/i3status.conf_old
 sudo ln -s ~/git-repos/dotfiles/i3/i3status.conf /etc/i3status.conf
 ```
 
+
+## Other:
+
+### Dark Firefox Theme:
+```
+https://github.com/horst3180/arc-firefox-theme
+```
