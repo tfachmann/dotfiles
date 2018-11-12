@@ -76,6 +76,7 @@
     nmap <leader>r :source ~/.config/nvim/init.vim<CR>
     nmap <leader>% :source %<CR>
     tnoremap <Esc> <C-\><C-n>
+    inoremap {<CR> {<CR>}<Esc>O
 
 " Commands:
     command! Vimrc :e ~/.config/nvim/init.vim
