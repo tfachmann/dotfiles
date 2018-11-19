@@ -1,9 +1,12 @@
-alias l='ls -al'
-alias ll='ls -l'
+alias l='ls -alh'
+alias ll='ls -lh'
 alias ..='cd ..'
 alias sudo='sudo ' 
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias bashrc="nvim ~/.bashrc"
+alias bash_aliases="nvim ~/.bash_aliases"
+alias i3config="nvim ~/git-repos/dotfiles/i3/.i3config"
 alias notes="nvim ~/Documents/notes/default.org"
 alias teamspeak="~/custom_programs/teamspeak/TeamSpeak3-Client-linux_amd64/ts3client_runscript.sh"
 alias androidstudio="/usr/local/android-studio/bin/studio.sh"
+alias ltspice="wine /home/timo/.wine/drive_c/Program\ Files/LTSpiceXVII/XVIIx64.exe"
