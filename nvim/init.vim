@@ -70,6 +70,7 @@
     map <C-E> :enew<CR>
     map <C-N> :bn<CR>
     map <C-L> :bp<CR>
+    map <F9> :ToggleSpell<CR>
     nmap <leader>w :w!<cr>
     nmap <leader>q :q<cr>
     nnoremap <leader>s :nohlsearch<CR>
@@ -199,9 +200,19 @@
     nmap <leader>db :Denite buffer<CR>
     nmap <leader>df :Denite file<CR>
 
-" R Markdown
+" R Markdown:
     autocmd Filetype rmd,rnoweb map <F5> :!echo<SPACE>"require(rmarkdown);<SPACE>render('<C-R>%')"<SPACE>\|<SPACE>R<SPACE>--vanilla<ENTER>
     autocmd BufWritePost *.Rmd :RMarkdown pdf
     autocmd Filetype rmarkdown,rmd set nospell
     "autocmd BufRead,BufNewFile
     "autocmd Filetype rmarkdown, rmd 
+
+    func! ToggleSpell()
+        if &spell == 0 
+            set spellfile=~/git-repos/dotfiles/nvim/spell/custom-de.utf-8.add
+            setlocal spell spelllang=custom-de
+        else
+            set nospell
+        endif
+    endfu
+    com! ToggleSpell call ToggleSpell()
