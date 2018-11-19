@@ -60,6 +60,7 @@ i3lock i3status dmenu dunst
 mv ~/.config/i3/config ~/./config/i3/config_old
 ln -s ~/git-repos/dotfiles/i3/.i3config ~/.config/i3/config
 ```
+
 ## i3status.conf
 
 ### Requirements:
@@ -79,6 +80,13 @@ sudo ln -s ~/git-repos/dotfiles/i3/i3status.conf /etc/i3status.conf
 ## Other:
 
 ### Dark Firefox Theme:
+
 ```
 https://github.com/horst3180/arc-firefox-theme
+```
+
+### Inverted Scrolling:
+
+```
+https://askubuntu.com/questions/91426/reverse-two-finger-scroll-direction-natural-scrolling
 ```
