@@ -35,9 +35,14 @@ ln -s ~/git-repos/dotfiles/.gitconfig ~/.gitconfig
 
 ### i3
 ```
-mv ~/.config/i3/config ~/./config/i3/config_old
+mv ~/.config/i3/config ~/.config/i3/config_old
 ln -s ~/git-repos/dotfiles/i3/.i3config ~/.config/i3/config
 
-sudo mv /etc/i3status.conf /etc/i3status.conf_old
-sudo ln -s ~/git-repos/dotfiles/i3/i3status.conf /etc/i3status.conf
+# sudo mv /etc/i3status.conf /etc/i3status.conf_old
+# sudo ln -s ~/git-repos/dotfiles/i3/i3status.conf /etc/i3status.conf
+
+mkdir ~/.config/i3blocks
+ln -s ~/git-repos/dotfiles/i3/i3blocks.conf ~/.config/i3blocks/i3blocks.conf
+
+ln -s ~/git-repos/dotfiles/.scripts/ ~/.scripts
 ```
