@@ -1,0 +1,20 @@
+#!/bin/bash
+MONITOR_VAR_FILE=$HOME/.vars/monitor-var      # specify monitor-var file
+MONITOR_VAR=`cat $MONITOR_VAR_FILE`             # read monitor-var file
+if [ -n "$MONITOR_VAR" ]; then                  # if not empty
+    if [ "$MONITOR_VAR" -eq 0 ]; then               # only 2nd screen
+        xrandr --output eDP1 --off
+        xrandr --output HDMI1 --auto --primary
+        echo "1" > $MONITOR_VAR_FILE                
+    elif [ "$MONITOR_VAR" -eq 1 ]; then             # HDMI first, laptop on the left as second
+        xrandr --output HDMI1 --auto --primary
+        xrandr --output eDP1 --auto --left-of HDMI1
+        echo "2" > $MONITOR_VAR_FILE
+    else                                            # split / mirror
+        xrandr --output eDP1 --auto --output HDMI1 --auto --same-as eDP1
+        echo "0" > $MONITOR_VAR_FILE
+    fi
+else                                            # if empty
+    xrandr --auto
+    echo "0" > $MONITOR_VAR_FILE
+fi

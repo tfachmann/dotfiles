@@ -1,0 +1,16 @@
+#!/bin/bash
+# fetch touchpad id
+ID=$(xinput list | egrep "slave.*pointer" | grep -v XTEST | sed -e 's/^.*id=//' -e 's/\s.*$//')
+
+# fetch button-map
+MAP=$(xinput get-button-map $ID)
+
+# swap 4's and 5's
+MAP=${MAP/4/tmp}
+MAP=${MAP/5/4}
+MAP=${MAP/tmp/5}
+
+xinput set-button-map $ID $MAP
+
+
+#gsettings set org.gnome.settings-daemon.peripherals.touchpad.deprecated:/ natural-scroll true

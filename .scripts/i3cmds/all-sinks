@@ -1,0 +1,14 @@
+#!/bin/bash
+
+MODE=$1
+
+for SINK in `pacmd list-sinks | grep 'index' | cut -b12-`
+do
+    if [ "$MODE" == "set" ]; then
+        VOLUME=$2
+        pactl set-sink-volume $SINK $VOLUME
+    fi
+    if [ "$MODE" == "toggle" ]; then
+        pactl set-sink-mute $SINK toggle
+    fi
+done
