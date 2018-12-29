@@ -182,7 +182,7 @@
     nmap <leader>fh :History<CR>
     nmap <leader>fc :History:<CR>
     nmap <leader>fm :Maps<CR>
-    
+
 
 " Denite:
 	call denite#custom#map(
@@ -205,10 +205,10 @@
     autocmd BufWritePost *.Rmd :RMarkdown pdf
     autocmd Filetype rmarkdown,rmd set nospell
     "autocmd BufRead,BufNewFile
-    "autocmd Filetype rmarkdown, rmd 
+    "autocmd Filetype rmarkdown, rmd
 
     func! ToggleSpell()
-        if &spell == 0 
+        if &spell == 0
             set spellfile=~/git-repos/dotfiles/nvim/spell/custom-de.utf-8.add
             setlocal spell spelllang=custom-de
         else
