@@ -1,6 +1,7 @@
 alias l='ls -alh'
 alias ll='ls -lh'
 alias ..='cd ..'
+alias c='xclip -selection clipboard'
 alias sudo='sudo ' 
 alias vimrc="nvim ~/.config/nvim/init.vim"
 alias bashrc="nvim ~/.bashrc"
