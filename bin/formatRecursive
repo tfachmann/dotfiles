@@ -1,0 +1,17 @@
+#!/bin/bash
+
+counter=0;
+#for SRC in `find -depth`
+find -depth | while read -r SRC
+do
+    DST=`dirname "${SRC}"`/`basename "${SRC}" | tr '[A-Z]' '[a-z]' | tr ' ' '_'`
+    if [ "${SRC}" != "${DST}" ]
+    then
+		echo -ne "\r"
+        [ ! -e "${DST}" ] && (mv -T "${SRC}" "${DST}.tmp" && mv "${DST}.tmp" "${DST}") || printf "%s was not renamed                                     \n", ${SRC}
+    fi
+	echo -ne "\r" 
+	((counter++))
+	echo -ne "Checking files and directories... " $counter;
+done
+echo "";

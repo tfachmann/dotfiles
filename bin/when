@@ -1,0 +1,87 @@
+#!/bin/bash
+
+function p {
+    echo -n $(printf %02d $(($1/60))):$(printf %02d $(($1%60)))
+}
+function p_normal {
+    echo -n "$1 hours at: "; p $(($go-((8-$1)*60))); echo
+}
+function p_max {
+    if [ $1 -eq 1 ]; then
+        echo -n "go before:  20:00 ("; p_working_h 1200 ; echo ")"
+    else
+        echo -n "go before:  "; p $go_max; echo
+    fi
+}
+function p_working_h {
+    result=$(($1-$came))
+    hours=$(($result/60))
+    min=$(($result%60))
+    if [ $hours -ge 6 ]; then
+        if [ $min -ge 30 ]; then
+            result=$(($result-30))
+        else
+            if [ $hours -eq 6 ]; then
+                result=$(($result-$min))
+            else
+                result=$(($result-30))
+            fi
+        fi
+        if [ $hours -ge 9 ]; then
+            if [ $min -ge 15 ]; then
+                result=$(($result-15))
+            else
+                if [ $hours -eq 9 ]; then
+                    result=$(($result-$min))
+                else
+                    result=$(($result-15))
+                fi
+            fi
+        fi
+    fi
+    p $result
+}
+
+
+duration=510        #8      hours
+duration_max=645    #10:45  hours
+
+if [ -z "$1" ]; then
+    echo "Please give the time of arrival such as:"
+    echo "    when [HH:MM]"
+    echo "To calculate the hours of worktime give the time of arrival and departure such as:"
+    echo "    when [HH:MM] [HH:MM]"
+    exit 1
+fi
+
+IFS=':' read -ra seperated <<< $1
+format_h=`echo ${seperated[0]} | sed 's/^0*//'`
+format_m=`echo ${seperated[1]} | sed 's/^0*//'`
+came=$((format_h*60+format_m))
+
+if [ -z "$2" ]; then
+
+    go=$(($came+$duration))
+    go_max=$(($came+$duration_max))
+
+    # check if today is friday
+    if [ $(date +%u) -eq 5 ]; then
+        p_normal 7
+    else    
+        p_normal 8
+    fi
+
+    # check if maximum exceeds 20:00
+    if [ $(($go_max/60)) -ge 20 ]; then
+        p_max 1
+    else
+        p_max 0
+    fi
+else
+    IFS=':' read -ra seperated <<< $2
+    format_h=`echo ${seperated[0]} | sed 's/^0*//'`
+    format_m=`echo ${seperated[1]} | sed 's/^0*//'`
+    went=$((format_h*60+format_m))
+    
+    echo -n "Adds "; p_working_h $went; echo " to ZEUS"
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+#cp -r /home/timo/nas/Dokumente/uni-DHBW/* /home/timo/Documents/uni-DHBW
+#cp -r /home/timo/nas/Dokumente/IdeaProjects/* /home/timo/IdeaProjects/ 
+rsync -ua --progress /home/timo/nas/Dokumente/uni-DHBW/* /home/timo/Documents/uni-DHBW/
+rsync -ua --progress /home/timo/nas/Dokumente/ebooks/* /home/timo/Documents/ebooks/
+rsync -ua --progress /home/timo/nas/Dokumente/IdeaProjects/* /home/timo/IdeaProjects/
+rsync -ua --progress /home/timo/nas/Dokumente/rpi/* /home/timo/Documents/rpi

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ $1 == "it" ] && [ $2 == "all" ] && [ $3 == "away" ]
+then
+    sleep 2
+	echo "9177 folders deleted"
+fi

@@ -1,0 +1,13 @@
+#!/bin/bash
+#cp -r /home/timo/Documents/uni-DHBW/* /home/timo/nas/Dokumente/uni-DHBW/
+#cp -r /home/timo/IdeaProjects/* /home/timo/nas/Dokumente/IdeaProjects/
+
+# lsyncd always sync (at startup put to /etc/rc.local
+#lsyncd -rsync /home/timo/Documents/uni-DHBW /home/timo/nas/Dokumente/uni-DHBW
+#lsyncd -rsync /home/timo/IdeaProjects /home/timo/nas/Dokumente/IdeaProjects
+
+rsync -ua --progress /home/timo/Documents/notes/default.org /home/timo/nas/Dokumente/notes/
+rsync -ua --progress /home/timo/Documents/uni-DHBW/* /home/timo/nas/Dokumente/uni-DHBW/
+#rsync -ua --progress /home/timo/IdeaProjects/* /home/timo/nas/Dokumente/IdeaProjects/
+rsync -ua --progress /home/timo/Documents/ebooks/* /home/timo/nas/Dokumente/ebooks/
+rsync -ua --progress /home/timo/Documents/rpi/* /home/timo/nas/Dokumente/rpi
