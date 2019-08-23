@@ -1,0 +1,26 @@
+snippet op "surround with operatorname" i
+\operatorname{${0:${VISUAL}}}$1
+endsnippet
+
+snippet lsti "\lstinline{}" i
+\lstinline{$1} $2
+endsnippet
+
+snippet lst "\begin{lstlisting}" b
+\begin{lstlisting}[language=$1]
+$2
+\end{lstlisting}
+endsnippet
+
+snippet import "figure with import" b
+\begin{figure}[${1:htpb}]
+    \centering
+    \import{include/images/}{$2}
+    \caption{$3}
+    \label{fig:$4}
+\end{figure}
+endsnippet
+
+snippet fr "defines a frame in the sense of robotics" i
+\\\{\$\operatorname{${1:${VISUAL}}}\$\\\} $2
+endsnippet
